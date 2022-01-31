@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>666</title>
+    <url>/2022/01/27/666/index/</url>
+    <content><![CDATA[<p>测试</p>
+]]></content>
+  </entry>
+  <entry>
     <title>twoPages</title>
     <url>/2022/01/27/twoPages/</url>
     <content><![CDATA[]]></content>
@@ -21,12 +27,6 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>666</title>
-    <url>/2022/01/27/666/index/</url>
-    <content><![CDATA[<p>测试</p>
 ]]></content>
   </entry>
 </search>
