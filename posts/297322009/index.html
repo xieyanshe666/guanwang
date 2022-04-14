@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="Xx5Wx7Gmrak8uvhpHou5YE-w2O4PjGUgYTAi27-nl7o">
+  <meta name="msvalidate.01" content="B3661AAC2E63610F98CE23631E3E85DC">
+  <meta name="baidu-site-verification" content="code-TDuIU5sz6K">
+
+<meta name="sogou_site_verification" content="jVqznyxwAs" />
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"seth-blog.ml","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="1，map简介map是STL的一个关联容器，它提供一对一的hash。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c++ map用法总结">
+<meta property="og:url" content="https://seth-blog.ml/posts/297322009/index.html">
+<meta property="og:site_name" content="Seth&#39;s Blog">
+<meta property="og:description" content="1，map简介map是STL的一个关联容器，它提供一对一的hash。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/ab94f358cc379299731b9aaa4814fd47.png">
+<meta property="article:published_time" content="2022-04-13T12:59:36.000Z">
+<meta property="article:modified_time" content="2022-04-13T13:00:52.639Z">
+<meta property="article:author" content="Seth">
+<meta property="article:tag" content="c++">
+<meta property="article:tag" content="语法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/img_convert/ab94f358cc379299731b9aaa4814fd47.png">
+
+
+<link rel="canonical" href="https://seth-blog.ml/posts/297322009/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://seth-blog.ml/posts/297322009/","path":"posts/297322009/","title":"c++ map用法总结"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>c++ map用法总结 | Seth's Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Seth's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">乾坤未定，你我皆是黑马……</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%EF%BC%8Cmap%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">1，map简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%EF%BC%8Cmap%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-number">2.</span> <span class="nav-text">2，map的功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%EF%BC%8C%E4%BD%BF%E7%94%A8map"><span class="nav-number">3.</span> <span class="nav-text">3，使用map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%EF%BC%8Cmap%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">4，map的构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%EF%BC%8C%E6%8F%92%E5%85%A5%E5%85%83%E7%B4%A0"><span class="nav-number">5.</span> <span class="nav-text">5，插入元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6%EF%BC%8C-%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0"><span class="nav-number">6.</span> <span class="nav-text">6， 查找元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7%EF%BC%8C-%E5%88%AA%E9%99%A4%E4%B8%8E%E6%B8%85%E7%A9%BA%E5%85%83%E7%B4%A0"><span class="nav-number">7.</span> <span class="nav-text">7， 刪除与清空元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8%EF%BC%8Cmap%E7%9A%84%E5%A4%A7%E5%B0%8F"><span class="nav-number">8.</span> <span class="nav-text">8，map的大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9%EF%BC%8Cmap%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="nav-number">9.</span> <span class="nav-text">9，map的基本操作函数：</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Seth"
+      src="/images/picture.jpeg">
+  <p class="site-author-name" itemprop="name">Seth</p>
+  <div class="site-description" itemprop="description">Seth的博客-This is my blog!</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button site-overview-item animated">
+    <button><i class="fa fa-comment"></i>
+      Chat
+    </button>
+  </div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xieyanshe" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xieyanshe" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xysyijian@163.com" title="E-Mail → mailto:xysyijian@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/xieyanshe" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;xieyanshe" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.zhihu.com/people/xieyanshe" title="知乎 → http:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;xieyanshe" rel="noopener" target="_blank"><i class="fab fa-zhihu fa-fw"></i>知乎</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://seth-blog.ml/" title="https:&#x2F;&#x2F;seth-blog.ml">Home</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://seth-blog.ml/posts/297322009/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/picture.jpeg">
+      <meta itemprop="name" content="Seth">
+      <meta itemprop="description" content="Seth的博客-This is my blog!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Seth's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          c++ map用法总结
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-04-13 20:59:36 / 修改时间：21:00:52" itemprop="dateCreated datePublished" datetime="2022-04-13T20:59:36+08:00">2022-04-13</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Valine：</span>
+  
+    <a title="valine" href="/posts/297322009/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/297322009/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+		  
+		  
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="1，map简介"><a href="#1，map简介" class="headerlink" title="1，map简介"></a>1，map简介</h3><p>map是STL的一个关联容器，它提供一对一的hash。</p>
+<span id="more"></span>
+
+<p>第一个可以称为关键字(key)，每个关键字只能在map中出现一次；<br>第二个可能称为该关键字的值(value)；</p>
+<p>map以模板(泛型)方式实现，可以存储任意类型的数据，包括使用者自定义的数据类型。Map主要用于资料一对一映射(one-to-one)的情況，map內部的实现自建一颗红黑树，这颗树具有对数据自动排序的功能。在map内部所有的数据都是有序的，后边我们会见识到有序的好处。比如一个班级中，每个学生的学号跟他的姓名就存在著一对一映射的关系。</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/ab94f358cc379299731b9aaa4814fd47.png"></p>
+<h3 id="2，map的功能"><a href="#2，map的功能" class="headerlink" title="2，map的功能"></a>2，map的功能</h3><p>自动建立key － value的对应。key 和 value可以是任意你需要的类型，包括自定义类型。</p>
+<h3 id="3，使用map"><a href="#3，使用map" class="headerlink" title="3，使用map"></a>3，使用map</h3><p>使用map得包含map类所在的头文件</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span>  <span class="comment">//注意，STL头文件没有扩展名.h</span></span></span><br></pre></td></tr></tbody></table></figure>
+
+
+<p>map对象是模板类，需要关键字和存储对象两个模板参数：</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std:map&lt;<span class="keyword">int</span>, string&gt; personnel;</span><br></pre></td></tr></tbody></table></figure>
+
+
+<p>这样就定义了一个用int作为索引,并拥有相关联的指向string的指针.</p>
+<p>为了使用方便，可以对模板类进行一下类型定义，</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> map&lt;<span class="keyword">int</span>,CString&gt; UDT_MAP_INT_CSTRING;</span><br><span class="line"></span><br><span class="line">UDT_MAP_INT_CSTRING enumMap;</span><br></pre></td></tr></tbody></table></figure>
+
+
+<h3 id="4，map的构造函数"><a href="#4，map的构造函数" class="headerlink" title="4，map的构造函数"></a>4，map的构造函数</h3><p>map共提供了6个构造函数，这块涉及到内存分配器这些东西，略过不表，在下面我们将接触到一些map的构造方法，这里要说下的就是，我们通常用如下方法构造一个map：</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">map&lt;<span class="keyword">int</span>, string&gt; mapStudent;</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="5，插入元素"><a href="#5，插入元素" class="headerlink" title="5，插入元素"></a>5，插入元素</h3><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个map对象</span></span><br><span class="line">map&lt;<span class="keyword">int</span>, string&gt; mapStudent;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 第一种 用insert函數插入pair</span></span><br><span class="line">mapStudent.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>, string&gt;(<span class="number">000</span>, <span class="string">"student_zero"</span>));</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 第二种 用insert函数插入value_type数据</span></span><br><span class="line">mapStudent.<span class="built_in">insert</span>(map&lt;<span class="keyword">int</span>, string&gt;::<span class="built_in">value_type</span>(<span class="number">001</span>, <span class="string">"student_one"</span>));</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 第三种 用"array"方式插入</span></span><br><span class="line">mapStudent[<span class="number">123</span>] = <span class="string">"student_first"</span>;</span><br><span class="line">mapStudent[<span class="number">456</span>] = <span class="string">"student_second"</span>;</span><br></pre></td></tr></tbody></table></figure>
+<p>以上三种用法，虽然都可以实现数据的插入，但是它们是有区别的，当然了第一种和第二种在效果上是完成一样的，用insert函数插入数据，在数据的 插入上涉及到集合的唯一性这个概念，即当map中有这个关键字时，insert操作是不能在插入数据的，但是用数组方式就不同了，它可以覆盖以前该关键字对 应的值，用程序说明如下：</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mapStudent.<span class="built_in">insert</span>(map&lt;<span class="keyword">int</span>, string&gt;::<span class="built_in">value_type</span> (<span class="number">001</span>, <span class="string">"student_one"</span>));</span><br><span class="line"> </span><br><span class="line">mapStudent.<span class="built_in">insert</span>(map&lt;<span class="keyword">int</span>, string&gt;::<span class="built_in">value_type</span> (<span class="number">001</span>, <span class="string">"student_two"</span>));</span><br></pre></td></tr></tbody></table></figure>
+
+<p>上面这两条语句执行后，map中001这个关键字对应的值是“student_one”，第二条语句并没有生效，那么这就涉及到我们怎么知道insert语句是否插入成功的问题了，可以用pair来获得是否插入成功，程序如下</p>
+  <figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造定义，返回一个pair对象</span></span><br><span class="line"><span class="function">pair&lt;iterator,<span class="keyword">bool</span>&gt; <span class="title">insert</span> <span class="params">(<span class="keyword">const</span> value_type&amp; val)</span></span>;</span><br><span class="line"> </span><br><span class="line">pair&lt;map&lt;<span class="keyword">int</span>, string&gt;::iterator, <span class="keyword">bool</span>&gt; Insert_Pair;</span><br><span class="line"> </span><br><span class="line">Insert_Pair = mapStudent.<span class="built_in">insert</span>(map&lt;<span class="keyword">int</span>, string&gt;::<span class="built_in">value_type</span> (<span class="number">001</span>, <span class="string">"student_one"</span>));</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span>(!Insert_Pair.second)</span><br><span class="line">    cout &lt;&lt; <span class="string">""</span>Error insert <span class="keyword">new</span> element<span class="string">" &lt;&lt; endl;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>我们通过pair的第二个变量来知道是否插入成功，它的第一个变量返回的是一个map的迭代器，如果插入成功的话Insert_Pair.second应该是true的，否则为false。</p>
+<h3 id="6，-查找元素"><a href="#6，-查找元素" class="headerlink" title="6， 查找元素"></a>6， 查找元素</h3><p>当所查找的关键key出现时，它返回数据所在对象的位置，如果沒有，返回iter与end函数的值相同。</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// find 返回迭代器指向当前查找元素的位置否则返回map::end()位置</span></span><br><span class="line">iter = mapStudent.<span class="built_in">find</span>(<span class="string">"123"</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span>(iter != mapStudent.<span class="built_in">end</span>())</span><br><span class="line">       cout&lt;&lt;<span class="string">"Find, the value is"</span>&lt;&lt;iter-&gt;second&lt;&lt;endl;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">   cout&lt;&lt;<span class="string">"Do not Find"</span>&lt;&lt;endl;</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="7，-刪除与清空元素"><a href="#7，-刪除与清空元素" class="headerlink" title="7， 刪除与清空元素"></a>7， 刪除与清空元素</h3><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//迭代器刪除</span></span><br><span class="line">iter = mapStudent.<span class="built_in">find</span>(<span class="string">"123"</span>);</span><br><span class="line">mapStudent.<span class="built_in">erase</span>(iter);</span><br><span class="line"> </span><br><span class="line"><span class="comment">//用关键字刪除</span></span><br><span class="line"><span class="keyword">int</span> n = mapStudent.<span class="built_in">erase</span>(<span class="string">"123"</span>); <span class="comment">//如果刪除了會返回1，否則返回0</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">//用迭代器范围刪除 : 把整个map清空</span></span><br><span class="line">mapStudent.<span class="built_in">erase</span>(mapStudent.<span class="built_in">begin</span>(), mapStudent.<span class="built_in">end</span>());</span><br><span class="line"><span class="comment">//等同于mapStudent.clear()</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="8，map的大小"><a href="#8，map的大小" class="headerlink" title="8，map的大小"></a>8，map的大小</h3><p>在往map里面插入了数据，我们怎么知道当前已经插入了多少数据呢，可以用size函数，用法如下：</p>
+  <figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> nSize = mapStudent.<span class="built_in">size</span>();</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="9，map的基本操作函数："><a href="#9，map的基本操作函数：" class="headerlink" title="9，map的基本操作函数："></a>9，map的基本操作函数：</h3><pre><code> C++ maps是一种关联式容器，包含“关键字/值”对
+
+ begin()         返回指向map头部的迭代器
+
+ clear(）        删除所有元素
+
+ count()         返回指定元素出现的次数, (帮助评论区理解： 因为key值不会重复，所以只能是1 or 0)
+
+ empty()         如果map为空则返回true
+
+ end()           返回指向map末尾的迭代器
+
+ equal_range()   返回特殊条目的迭代器对
+
+ erase()         删除一个元素
+
+ find()          查找一个元素
+
+ get_allocator() 返回map的配置器
+
+ insert()        插入元素
+
+ key_comp()      返回比较元素key的函数
+
+ lower_bound()   返回键值&gt;=给定元素的第一个位置
+
+ max_size()      返回可以容纳的最大元素个数
+
+ rbegin()        返回一个指向map尾部的逆向迭代器
+
+ rend()          返回一个指向map头部的逆向迭代器
+
+ size()          返回map中元素的个数
+
+ swap()           交换两个map
+
+ upper_bound()    返回键值&gt;给定元素的第一个位置
+
+ value_comp()     返回比较元素value的函数
+</code></pre>
+
+    </div>
+
+    
+    
+    
+      
+
+	
+	<div>
+		
+			<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+		
+	</div>
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Seth
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://seth-blog.ml/posts/297322009/" title="c++ map用法总结">https://seth-blog.ml/posts/297322009/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/c/" rel="tag"><i class="fa fa-tag"></i> c++</a>
+              <a href="/tags/%E8%AF%AD%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 语法</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/20400546/" rel="prev" title="学校游记4（未完待续……）">
+                  <i class="fa fa-chevron-left"></i> 学校游记4（未完待续……）
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/3919692788/" rel="next" title="平凡（改编自朱自清的《匆匆》）">
+                  平凡（改编自朱自清的《匆匆》） <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="valine-comments"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Seth</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">20k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">18 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+-->
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+<script class="next-config" data-name="chatra" type="application/json">{"enable":true,"async":true,"id":"Tf9f3bZCYEEaMb7cN"}</script>
+<script src="/js/third-party/chat/chatra.js"></script>
+<script async src="https://call.chatra.io/chatra.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"RCEjs84bEVz4S7S9bYcj2WLR-MdYXbMMI","appKey":"uI94i0aPhC2JJf8sEtfJa5qb","serverURLs":"https://rcejs84b.api.lncldglobal.com","placeholder":"评论区……昵称，邮箱，网站都不填是佚名哦~（都是选填的）","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/posts/297322009/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.valine.el)
+    .then(() => NexT.utils.getScript(
+      'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
+      { condition: window.Valine }
+    ))
+    .then(() => {
+      new Valine(CONFIG.valine);
+    });
+});
+</script>
+
+</body>
+</html>
