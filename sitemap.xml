@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://seth-blog.ml/links/index.html</loc>
+    
+    <lastmod>2022-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://seth-blog.ml/posts/3919692788/</loc>
     
     <lastmod>2022-04-14</lastmod>
