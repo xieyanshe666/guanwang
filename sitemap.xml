@@ -4,7 +4,7 @@
   <url>
     <loc>https://seth-blog.ml/links/index.html</loc>
     
-    <lastmod>2022-04-15</lastmod>
+    <lastmod>2022-04-16</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -119,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://seth-blog.ml/posts/2669557626/</loc>
+    <loc>https://seth-blog.ml/posts/2610740764/</loc>
     
     <lastmod>2022-03-12</lastmod>
     
@@ -137,7 +137,7 @@
   </url>
   
   <url>
-    <loc>https://seth-blog.ml/posts/2610740764/</loc>
+    <loc>https://seth-blog.ml/posts/2669557626/</loc>
     
     <lastmod>2022-03-12</lastmod>
     
@@ -223,6 +223,13 @@
   </url>
   
   <url>
+    <loc>https://seth-blog.ml/tags/%E8%A8%80%E5%B0%84%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2022-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://seth-blog.ml/tags/%E6%B8%B8%E8%AE%B0/</loc>
     <lastmod>2022-04-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -231,13 +238,6 @@
   
   <url>
     <loc>https://seth-blog.ml/tags/%E5%AD%A6%E6%A0%A1/</loc>
-    <lastmod>2022-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://seth-blog.ml/tags/%E8%A8%80%E5%B0%84%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2022-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -272,13 +272,6 @@
   </url>
   
   <url>
-    <loc>https://seth-blog.ml/tags/%E8%A8%80%E5%B0%84%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2022-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://seth-blog.ml/tags/%E6%BA%90%E7%A0%81%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2022-04-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -287,6 +280,13 @@
   
   <url>
     <loc>https://seth-blog.ml/tags/%E5%8F%91%E5%B8%83%E4%BC%9A/</loc>
+    <lastmod>2022-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://seth-blog.ml/tags/%E8%A8%80%E5%B0%84%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2022-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
