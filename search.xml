@@ -267,6 +267,8 @@
     <title>谢言射教你用hexo+github搭建博客（1.准备工作）</title>
     <url>/posts/4293843122/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="或许有人会问，为什么是用github而不用coding和gitee呢？因为coding已经改版，貌似不支持静态页面了，gitee使用又很麻烦（要充钱），还要实名认证，最后还是选了github。"><a href="#或许有人会问，为什么是用github而不用coding和gitee呢？因为coding已经改版，貌似不支持静态页面了，gitee使用又很麻烦（要充钱），还要实名认证，最后还是选了github。" class="headerlink" title="或许有人会问，为什么是用github而不用coding和gitee呢？因为coding已经改版，貌似不支持静态页面了，gitee使用又很麻烦（要充钱），还要实名认证，最后还是选了github。"></a>或许有人会问，为什么是用github而不用coding和gitee呢？因为coding已经改版，貌似不支持静态页面了，gitee使用又很麻烦（要充钱），还要实名认证，最后还是选了github。</h2><p>本教程主要介绍搭建个人博客之前的准备工作，也就是您需要本地电脑安装什么样的软件。</p>
+<span id="more"></span>
+
 <h1 id="进入教程"><a href="#进入教程" class="headerlink" title="进入教程"></a>进入教程</h1><h2 id="安装文本编辑器（可选）"><a href="#安装文本编辑器（可选）" class="headerlink" title="安装文本编辑器（可选）"></a>安装文本编辑器（可选）</h2><p>博主这里选的是Visual Studio Code（简称VSCode），它安装比较方便，使用也很灵活，而且还是微软公司开发的，当然，您也可以选择其他的文本编辑器。<br>官网下载地址：<a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a><br>PS：一般情况下，博主不会在博客中放附件，因为这样可能会增加博客服务器的负担。</p>
 <p>下载完成后，双击打开文件<br><img src="https://cdn.jsdelivr.net/gh/xieyanshe666/PicGoCDN/img/1.1.png"></p>
 <p>PS：如果下载时出现警告，请选择“保留”</p>
