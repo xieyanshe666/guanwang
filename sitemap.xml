@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://seth-blog.ml/404.html</loc>
+    
+    <lastmod>2022-04-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://seth-blog.ml/posts/4293843122/</loc>
     
     <lastmod>2022-04-19</lastmod>
@@ -167,15 +176,6 @@
     <loc>https://seth-blog.ml/posts/1563617092/</loc>
     
     <lastmod>2022-02-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://seth-blog.ml/404/index.html</loc>
-    
-    <lastmod>2022-02-04</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
