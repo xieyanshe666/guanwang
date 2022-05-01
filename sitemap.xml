@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://seth-blog.ml/posts/3031762228/</loc>
+    
+    <lastmod>2022-05-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://seth-blog.ml/posts/2290789902/</loc>
+    
+    <lastmod>2022-04-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://seth-blog.ml/404.html</loc>
     
     <lastmod>2022-04-20</lastmod>
@@ -146,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://seth-blog.ml/posts/2610740764/</loc>
+    <loc>https://seth-blog.ml/posts/2669557626/</loc>
     
     <lastmod>2022-03-12</lastmod>
     
@@ -164,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://seth-blog.ml/posts/2669557626/</loc>
+    <loc>https://seth-blog.ml/posts/2610740764/</loc>
     
     <lastmod>2022-03-12</lastmod>
     
@@ -361,6 +379,20 @@
   
   <url>
     <loc>https://seth-blog.ml/tags/github/</loc>
+    <lastmod>2022-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://seth-blog.ml/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</loc>
+    <lastmod>2022-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://seth-blog.ml/tags/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2022-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
