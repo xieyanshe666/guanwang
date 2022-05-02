@@ -1194,4 +1194,27 @@ int main(){
         <tag>题解</tag>
       </tags>
   </entry>
+  <entry>
+    <title>谢言射教你用hexo+github搭建博客（3.主题更换）</title>
+    <url>/posts/3200579984/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>基于<a href="https://xys-blog.cf/posts/3031762228/">第二章的准备工作</a>，现在更换博客主题</p>
+<span id="more"></span>
+
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>当然，您可以保留hexo的默认主题，也可以跟着本教程更换</p>
+<h3 id="选择主题"><a href="#选择主题" class="headerlink" title="选择主题"></a>选择主题</h3><p>到 <a href="https://hexo.io/themes/">https://hexo.io/themes/</a> 中选择一款您喜欢的主题，并点击它的名字进入它的github地址<br><img src="https://cdn.jsdelivr.net/gh/xieyanshe666/PicGoCDN/img/3.1.png"></p>
+<h3 id="更换主题-1"><a href="#更换主题-1" class="headerlink" title="更换主题"></a>更换主题</h3><p>这里以butterfly主题为例<br>划到自述文件的开头<br>然后复制红框中的代码<br>在git中先打开博客（cd /f/myblog），然后把刚刚复制的东西黏贴到git中运行<br><img src="https://cdn.jsdelivr.net/gh/xieyanshe666/PicGoCDN/img/3.3.png"></p>
+<p>注：butterfly等主题还需在git中运行</p>
+<p>  npm install hexo-renderer-pug hexo-renderer-stylus<br>才行<br>接着更改博客根目录的_config.yml文件<br>把大约为第100行的theme配置改为</p>
+<p>  theme: 您刚刚更改的主题的名称<br>比如我的</p>
+<p>  theme: butterfly<br><img src="https://cdn.jsdelivr.net/gh/xieyanshe666/PicGoCDN/img/3.4.png"></p>
+<p>再在git中运行</p>
+<p>  hexo clean &amp;&amp; hexo g &amp;&amp; hexo d<br>即可<br>等待一会，在浏览器中打开自己的博客，就能看见变化了<br><img src="https://cdn.jsdelivr.net/gh/xieyanshe666/PicGoCDN/img/3.5.png"></p>
+<p>博主有关hexo博客搭建的文章已经写完了<br>但后续会推出hexo博客美化系列的文章<br>敬请期待……</p>
+<p>感谢您的阅读！！！<br>（如有错请联系博主：<a href="mailto:xyswyy1@163.com">xyswyy1@163.com</a>或在评论区留言）</p>
+<center>---------END--------</center>]]></content>
+      <tags>
+        <tag>hexo</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
 </search>
