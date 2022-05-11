@@ -1419,4 +1419,94 @@ hexo d
         <tag>题解</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Bear and Finding Criminals题解</title>
+    <url>/posts/2949852796/</url>
+    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="Bear-and-Finding-Criminals"><a href="#Bear-and-Finding-Criminals" class="headerlink" title="Bear and Finding Criminals"></a>Bear and Finding Criminals</h3><span id="more"></span>
+
+<h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>熊岛有n个城市，编号为1到n。城市被排列成一长排。城市i和j之间的距离等于|i-j|。</p>
+<p>利马克是一名警察。他住在一个城市a，他的工作是抓捕罪犯。这很难，因为他不知道犯罪分子在哪个城市。不过，他知道每个城市最多只有一个罪犯。</p>
+<p>利马克将使用BCD（熊犯罪探测器）。BCD会告诉Limak，从一个城市a开始，每隔一段距离就有多少个罪犯。</p>
+<p>你知道在哪些城市有罪犯。在利马克使用BCD后，计算他能抓到的罪犯的数量。</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>输入的第一行包含两个整数n和a（1≤a≤n≤100）–城市的数量和Limak居住的城市的索引。<br>第二行包含n个整数t1,t2,…,tn（0≤ti≤1）。在第i个城市有ti个罪犯。</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>打印Limak将抓到的罪犯的数量。</p>
+<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><p>输入1</p>
+<pre><code>6 3
+1 1 1 0 1 0
+</code></pre>
+<p>输出1</p>
+<pre><code>3
+</code></pre>
+<p>输入2</p>
+<pre><code>5 2
+0 0 0 1 0
+</code></pre>
+<p>输出2</p>
+<pre><code>1
+</code></pre>
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><p>在第一个样本中，有六个城市，利马克住在第三个城市（下面的蓝色箭头）。罪犯在标有红色的城市里。<br>使用BCD给Limak提供了以下信息。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/xieyanshe666/PicGoCDN/img/16516346483990.png"></p>
+<p>1.在离第三个城市的距离0处有一个罪犯–利马克确信这个罪犯正好在第三个城市。<br>2.在离第三城市的距离1处有一个罪犯–利马克不知道这个罪犯是在第二还是第四城市。<br>3.在离第三座城市的距离为2的地方有两个罪犯–利马克肯定有一个罪犯在第一座城市，一个在第五座城市。<br>4.每一个更大的距离都有零个罪犯。<br>因此，利马克将在第1、3和5个城市抓到罪犯，即总共有3个罪犯。 在第二个例子中（如下图），BCD给Limak的信息是，在距离Limak的城市2处有一个罪犯。在距离2的地方只有一个城市，所以Limak确定了一个罪犯的位置。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/xieyanshe666/PicGoCDN/img/16516347087641.png"></p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><blockquote>
+<p>  时间限制    2 秒<br>    内存限制    256 MB<br>    来源        FYOJ</p>
+</blockquote>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>emmmm……<br><del>模拟好，模拟秒，模拟青蛙呱呱叫</del></p>
+<p>咳咳咳，还好，模拟，按题目打即可</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> s[<span class="number">110</span>];</span><br><span class="line"><span class="keyword">int</span> n,a;</span><br><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{	</span><br><span class="line">	cin  &gt;&gt; n &gt;&gt; a;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++){</span><br><span class="line">		cin &gt;&gt; s[i];</span><br><span class="line">	}	</span><br><span class="line">	<span class="keyword">if</span> (a &lt;= n/<span class="number">2</span>) {</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n; i++) {</span><br><span class="line">			<span class="keyword">if</span> (i &lt; a) {</span><br><span class="line">				<span class="keyword">if</span> (s[i] == <span class="number">1</span> &amp;&amp; s[<span class="number">2</span>*a-i] == <span class="number">1</span>){</span><br><span class="line">					sum += <span class="number">2</span>;</span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (i == a) {</span><br><span class="line">				<span class="keyword">if</span> (s[i] == <span class="number">1</span>){</span><br><span class="line">					sum++;</span><br><span class="line">				}</span><br><span class="line">			} <span class="keyword">else</span> {</span><br><span class="line">				<span class="keyword">if</span> (i &gt;= <span class="number">2</span>*a){</span><br><span class="line">					<span class="keyword">if</span>(s[i] == <span class="number">1</span>){</span><br><span class="line">						sum++;</span><br><span class="line">					} </span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">	} <span class="keyword">else</span> {</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) {</span><br><span class="line">			<span class="keyword">if</span> (i &gt;= <span class="number">2</span>*a-n &amp;&amp; i &lt; a) {</span><br><span class="line">				<span class="keyword">if</span> (s[i] == <span class="number">1</span>&amp;&amp;s[<span class="number">2</span>*a-i] == <span class="number">1</span>){</span><br><span class="line">					sum+=<span class="number">2</span>;</span><br><span class="line">				}</span><br><span class="line">			} <span class="keyword">else</span> <span class="keyword">if</span> (i == a) {</span><br><span class="line">				<span class="keyword">if</span> (s[i] == <span class="number">1</span>){</span><br><span class="line">					sum++;</span><br><span class="line">				}</span><br><span class="line">			} <span class="keyword">else</span> {</span><br><span class="line">				<span class="keyword">if</span> (i &lt; <span class="number">2</span>*a-n){</span><br><span class="line">					<span class="keyword">if</span>(s[i] == <span class="number">1</span>){</span><br><span class="line">						sum++;</span><br><span class="line">					} </span><br><span class="line">				}</span><br><span class="line">			}</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	cout &lt;&lt; sum &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>  测评结果    通过<br>    分数        100<br>    时间        1 MS<br>    内存        712 KB<br>    语言        C++<br>    代码长度    797        </p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>c++</tag>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Bear and Five Cards题解</title>
+    <url>/posts/2000011491/</url>
+    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="Bear-and-Five-Cards"><a href="#Bear-and-Five-Cards" class="headerlink" title="Bear and Five Cards"></a>Bear and Five Cards</h3><span id="more"></span>
+
+<h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>一只小熊Limak在玩一个游戏。他有五张牌。每张卡片上都写有一个数字。每个数字都是一个正整数。</p>
+<p>利马克可以丢弃（扔掉）一些牌。他的目标是使写在剩余（未丢弃）卡片上的数字之和最小。</p>
+<p>他最多可以丢弃一次两个或三个数字相同的牌。当然，如果不可能选择两张或三张数字相同的牌，他也不会弃牌。</p>
+<p>给出五个写在卡片上的数字，你能找到剩余卡片上数字的最小和吗？</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>输入的唯一一行包含五个整数t1、t2、t3、t4和t5（1≤ti≤100）–写在卡片上的数字。</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>打印写在剩余卡片上的数字的最小可能的总和。</p>
+<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><p>输入1</p>
+<pre><code>7 3 7 3 20
+</code></pre>
+<p>输出1</p>
+<pre><code>26
+</code></pre>
+<p>输入2</p>
+<pre><code>7 9 3 1 8
+</code></pre>
+<p>输出2</p>
+<pre><code>28
+</code></pre>
+<p>输入3</p>
+<pre><code>10 10 10 10 10
+</code></pre>
+<p>输出3</p>
+<pre><code>20
+</code></pre>
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><p>在第一个例子中，利马克有数字为7、3、7、3和20的牌。利马克可以做以下其中一个。<br>什么都不做，总和将是7+3+7+3+20=40。 去掉两张数字为7的牌。剩下的总和将是3+3+20=26。<br>移除两张数字为3的牌。剩下的总和是7+7+20=34。<br>你被要求最小化总和，所以答案是26。<br>在第二个例子中，不可能找到两张或三张数字相同的牌。因此，利马克什么也没做，总和是7+9+1+3+8=28。<br>在第三个例子中，所有的牌都有相同的数字。丢弃任何三张牌都是最佳选择。剩下两个数字的总和是10+10=20。</p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><blockquote>
+<p>  时间限制    2 秒<br>    内存限制    256 MB<br>    来源        FYOJ</p>
+</blockquote>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><del>水题一道</del><br>呸<br>模拟题一道<br>上code！</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">int</span> b[<span class="number">110</span>];</span><br><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> top;</span><br><span class="line"><span class="keyword">int</span> ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="comment">//freopen(".in","r",stdin);</span></span><br><span class="line">	<span class="comment">//freopen(".out","w",stdout);</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++){</span><br><span class="line">		cin &gt;&gt; a;</span><br><span class="line">		b[a]++;</span><br><span class="line">		sum += a;</span><br><span class="line">	}</span><br><span class="line">	top = sum;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">100</span>; i &gt;= <span class="number">0</span>; i--){</span><br><span class="line">		ans = top;</span><br><span class="line">		<span class="keyword">if</span> (b[i] &gt;= <span class="number">3</span>){</span><br><span class="line">			ans -= i*<span class="number">3</span>;</span><br><span class="line">		} <span class="keyword">else</span> <span class="keyword">if</span> (b[i] == <span class="number">2</span>){</span><br><span class="line">			ans -= i*<span class="number">2</span>;</span><br><span class="line">		}</span><br><span class="line">		sum = <span class="built_in">min</span>(sum,ans);</span><br><span class="line">	}</span><br><span class="line">	cout &lt;&lt; sum;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">int</span> b[<span class="number">110</span>];</span><br><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> top;</span><br><span class="line"><span class="keyword">int</span> ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="comment">//freopen(".in","r",stdin);</span></span><br><span class="line">	<span class="comment">//freopen(".out","w",stdout);</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++){</span><br><span class="line">		cin &gt;&gt; a;</span><br><span class="line">		b[a]++;</span><br><span class="line">		sum += a;</span><br><span class="line">	}</span><br><span class="line">	top = sum;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">100</span>; i &gt;= <span class="number">0</span>; i--){</span><br><span class="line">		ans = top;</span><br><span class="line">		<span class="keyword">if</span> (b[i] &gt;= <span class="number">3</span>){</span><br><span class="line">			ans -= i*<span class="number">3</span>;</span><br><span class="line">		} <span class="keyword">else</span> <span class="keyword">if</span> (b[i] == <span class="number">2</span>){</span><br><span class="line">			ans -= i*<span class="number">2</span>;</span><br><span class="line">		}</span><br><span class="line">		sum = <span class="built_in">min</span>(sum,ans);</span><br><span class="line">	}</span><br><span class="line">	cout &lt;&lt; sum;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>  测评结果    通过<br>    分数        100<br>    时间        0 MS<br>    内存        704 KB<br>    语言        C++<br>    代码长度    451    </p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>c++</tag>
+        <tag>题解</tag>
+      </tags>
+  </entry>
 </search>

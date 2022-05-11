@@ -24,29 +24,29 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"seth-blog.ml","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="题目世界杯(worldcup)">
+<meta name="description" content="题目Bear and Five Cards">
 <meta property="og:type" content="article">
-<meta property="og:title" content="世界杯(worldcup)题解">
-<meta property="og:url" content="https://seth-blog.ml/posts/751019721/index.html">
+<meta property="og:title" content="Bear and Five Cards题解">
+<meta property="og:url" content="https://seth-blog.ml/posts/2000011491/index.html">
 <meta property="og:site_name" content="Seth&#39;s Blog">
-<meta property="og:description" content="题目世界杯(worldcup)">
+<meta property="og:description" content="题目Bear and Five Cards">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-03T08:16:23.000Z">
-<meta property="article:modified_time" content="2022-05-03T08:56:12.553Z">
+<meta property="article:published_time" content="2022-05-11T12:35:42.000Z">
+<meta property="article:modified_time" content="2022-05-11T12:46:44.134Z">
 <meta property="article:author" content="Seth">
 <meta property="article:tag" content="c++">
 <meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://seth-blog.ml/posts/751019721/">
+<link rel="canonical" href="https://seth-blog.ml/posts/2000011491/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://seth-blog.ml/posts/751019721/","path":"posts/751019721/","title":"世界杯(worldcup)题解"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://seth-blog.ml/posts/2000011491/","path":"posts/2000011491/","title":"Bear and Five Cards题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>世界杯(worldcup)题解 | Seth's Blog</title>
+<title>Bear and Five Cards题解 | Seth's Blog</title>
   
 
 
@@ -158,7 +158,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%96%E7%95%8C%E6%9D%AF-worldcup"><span class="nav-number">1.1.</span> <span class="nav-text">世界杯(worldcup)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.2.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-number">1.3.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-number">1.4.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B"><span class="nav-number">1.5.</span> <span class="nav-text">样例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA"><span class="nav-number">1.6.</span> <span class="nav-text">提示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%99%E9%A2%98%E7%94%A8%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%EF%BC%81%EF%BC%81%EF%BC%81"><span class="nav-number">2.0.1.</span> <span class="nav-text">这题用优先队列！！！</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bear-and-Five-Cards"><span class="nav-number">1.1.</span> <span class="nav-text">Bear and Five Cards</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.2.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-number">1.3.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-number">1.4.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B"><span class="nav-number">1.5.</span> <span class="nav-text">样例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA"><span class="nav-number">1.6.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-number">1.7.</span> <span class="nav-text">补充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -297,7 +297,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://seth-blog.ml/posts/751019721/">
+    <link itemprop="mainEntityOfPage" href="https://seth-blog.ml/posts/2000011491/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/picture.jpeg">
@@ -310,7 +310,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          世界杯(worldcup)题解
+          Bear and Five Cards题解
         </h1>
 
         <div class="post-meta-container">
@@ -322,7 +322,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-05-03 16:16:23 / 修改时间：16:56:12" itemprop="dateCreated datePublished" datetime="2022-05-03T16:16:23+08:00">2022-05-03</time>
+      <time title="创建时间：2022-05-11 20:35:42 / 修改时间：20:46:44" itemprop="dateCreated datePublished" datetime="2022-05-11T20:35:42+08:00">2022-05-11</time>
     </span>
 
   
@@ -341,8 +341,8 @@
     </span>
     <span class="post-meta-item-text">Valine：</span>
   
-    <a title="valine" href="/posts/751019721/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/751019721/" itemprop="commentCount"></span>
+    <a title="valine" href="/posts/2000011491/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/2000011491/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -352,14 +352,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.2k</span>
+      <span>1.4k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>1 分钟</span>
     </span>
 </div>
 
@@ -372,36 +372,41 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="世界杯-worldcup"><a href="#世界杯-worldcup" class="headerlink" title="世界杯(worldcup)"></a>世界杯(worldcup)</h3><span id="more"></span>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="Bear-and-Five-Cards"><a href="#Bear-and-Five-Cards" class="headerlink" title="Bear and Five Cards"></a>Bear and Five Cards</h3><span id="more"></span>
 
-<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>3014年世界杯足球赛就要开始了！作为卫冕冠军中国足球队的教练，手下每位球员都是猛将，如何摆出最强的11人阵容也是一件幸福的烦恼事啊。<br>众所周知，足球阵容里的11个球员都会被分配到场上某一个特别的位置，而这些位置主要分为守门员、后卫、中场和前锋四种，其中守门员有且只有一个，后卫、中场和前锋的人数取决于你安排的足球阵型。形容足球阵型的方法由后卫开始计算至前锋，但不把守门员计算在内。例如，3-5-2阵型是指有三个后卫、五个中场及两名前锋。由于竞争激烈，每位球员只会培养其中一种位置所需要的技能，所以他们每个人都只能胜任四个位置中的其中一种。<br>作为一个对球员能力了如指掌的教练，你给每个球员的综合水平进行量化。为了将阵型安排得更好，你的教练团队决定使用以下策略安排球员：首先按照顺序提出Q个阵型，分别代表第一阵型、第二阵型、……、第Q阵型。然后对于每个阵型，从仍未选择的球员中选择最好的对应数量的守门员、后卫、中场和前锋。比如说，对于第一阵型，在所有球员中选择；对于第二阵型，在除了第一阵型外的所有球员中选择；对于第三阵型，在除了第一阵型和第二阵型外的所有球员中选择；以此类推。<br>现在Q个阵型都已经确定，而你需要知道的，是每个阵型的平均综合水平分别是多少。</p>
-<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>第一行有四个整数K, D, M, F，分别表示守门员、后卫、中场和前锋供挑选的球员人数。<br>第二行有K个整数k_i，分别表示每个守门员的综合水平值。<br>第三行有D个整数d_i，分别表示每个后卫的综合水平值。<br>第四行有M个整数m_i，分别表示每个中场的综合水平值。<br>第五行有F个整数f_i，分别表示每个前锋的综合水平值。<br>第六行有一个整数Q，表示教练团队提出的阵型个数。<br>以下Q行，第i行三个整数A_i, B_i, C_i，由空格间隔，表示第i阵型是A_i - B_i - C_i阵型。</p>
-<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>输出Q行。对于第i种阵型，输出一个实数，表示该阵型平均综合水平的最大值，并四舍五入到小数点后2位。</p>
-<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><p>输入</p>
-<pre><code>3 10 12 4
-76 60 87
-78 84 84 84 81 82 72 51 77 57
-85 84 62 87 88 64 81 90 80 66 88 85
-65 83 63 79
-2
-4 5 1
-4 4 2
+<h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>一只小熊Limak在玩一个游戏。他有五张牌。每张卡片上都写有一个数字。每个数字都是一个正整数。</p>
+<p>利马克可以丢弃（扔掉）一些牌。他的目标是使写在剩余（未丢弃）卡片上的数字之和最小。</p>
+<p>他最多可以丢弃一次两个或三个数字相同的牌。当然，如果不可能选择两张或三张数字相同的牌，他也不会弃牌。</p>
+<p>给出五个写在卡片上的数字，你能找到剩余卡片上数字的最小和吗？</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>输入的唯一一行包含五个整数t1、t2、t3、t4和t5（1≤ti≤100）–写在卡片上的数字。</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>打印写在剩余卡片上的数字的最小可能的总和。</p>
+<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><p>输入1</p>
+<pre><code>7 3 7 3 20
 </code></pre>
-<p>输出</p>
-<pre><code>85.64
-78.00
+<p>输出1</p>
+<pre><code>26
 </code></pre>
-<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><p>对于30%数据，K, D, M, F≤1000，Q≤10；<br>对于100%数据，1≤K, D, M, F≤10^5，0≤k_i, d_i, m_i, f_i≤10^8，1≤Q≤K，0≤A_i, B_i, C_i≤10，A_i+B_i+C_i=10，∑A_i≤D，∑B_i≤M，∑C_i≤F。</p>
-<blockquote>
-<p>  时间限制: 1.000 Sec<br>    内存限制: 128 MB<br>    来源：Luo’s OJ &amp;&amp; 洛谷</p>
+<p>输入2</p>
+<pre><code>7 9 3 1 8
+</code></pre>
+<p>输出2</p>
+<pre><code>28
+</code></pre>
+<p>输入3</p>
+<pre><code>10 10 10 10 10
+</code></pre>
+<p>输出3</p>
+<pre><code>20
+</code></pre>
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><p>在第一个例子中，利马克有数字为7、3、7、3和20的牌。利马克可以做以下其中一个。<br>什么都不做，总和将是7+3+7+3+20=40。 去掉两张数字为7的牌。剩下的总和将是3+3+20=26。<br>移除两张数字为3的牌。剩下的总和是7+7+20=34。<br>你被要求最小化总和，所以答案是26。<br>在第二个例子中，不可能找到两张或三张数字相同的牌。因此，利马克什么也没做，总和是7+9+1+3+8=28。<br>在第三个例子中，所有的牌都有相同的数字。丢弃任何三张牌都是最佳选择。剩下两个数字的总和是10+10=20。</p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><blockquote>
+<p>  时间限制    2 秒<br>    内存限制    256 MB<br>    来源        FYOJ</p>
 </blockquote>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h4 id="这题用优先队列！！！"><a href="#这题用优先队列！！！" class="headerlink" title="这题用优先队列！！！"></a>这题用优先队列！！！</h4><p><del>优先队列是队列</del>，先要包含头文件#include <queue>, 它和queue不同的就在于我们可以自定义其中数据的优先级, 让优先级高的排在队列前面,优先出队</queue></p>
-<p>优先队列具有队列的所有特性，包括基本操作，只是在这基础上添加了内部的一个排序，它本质是一个堆实现的</p>
-<p>接下来看code吧~</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> n1,n2,n3,n4,T;</span><br><span class="line">priority_queue &lt;<span class="keyword">int</span>,vector&lt;<span class="keyword">int</span>&gt;,less&lt;<span class="keyword">int</span>&gt; &gt;q1,q2,q3,q4; <span class="comment">//定义优先队列 </span></span><br><span class="line"><span class="comment">//降序队列</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>,&amp;n1,&amp;n2,&amp;n3,&amp;n4); <span class="comment">//输入 </span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n1; i++) {</span><br><span class="line">		<span class="keyword">int</span> a;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a);</span><br><span class="line">		q1.<span class="built_in">push</span>(a); <span class="comment">//入队 </span></span><br><span class="line">	} </span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n2; i++) { <span class="comment">//这些都是第一个循环复制下来，微调的 </span></span><br><span class="line">		<span class="keyword">int</span> a;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a);</span><br><span class="line">		q2.<span class="built_in">push</span>(a);</span><br><span class="line">	} </span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n3; i++) {</span><br><span class="line">		<span class="keyword">int</span> a;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a);</span><br><span class="line">		q3.<span class="built_in">push</span>(a);</span><br><span class="line">	} </span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n4; i++) {</span><br><span class="line">		<span class="keyword">int</span> a;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a);</span><br><span class="line">		q4.<span class="built_in">push</span>(a);</span><br><span class="line">	} </span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</span><br><span class="line">	<span class="keyword">while</span> (T--){ <span class="comment">//同样，按题意模拟即可 </span></span><br><span class="line">		<span class="keyword">int</span> a,b,c;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">		<span class="keyword">double</span> sum = <span class="number">0.0</span>;</span><br><span class="line">		sum += q1.<span class="built_in">top</span>();</span><br><span class="line">		q1.<span class="built_in">pop</span>();</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= a; i++){</span><br><span class="line">			sum += q2.<span class="built_in">top</span>(); <span class="comment">//读取元素 </span></span><br><span class="line">			q2.<span class="built_in">pop</span>(); <span class="comment">//弹出 </span></span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= b; i++){ <span class="comment">//复制黏贴 </span></span><br><span class="line">			sum += q3.<span class="built_in">top</span>();</span><br><span class="line">			q3.<span class="built_in">pop</span>();</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= c; i++){</span><br><span class="line">			sum += q4.<span class="built_in">top</span>();</span><br><span class="line">			q4.<span class="built_in">pop</span>();</span><br><span class="line">		}</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%.2lf\n"</span>,(sum/<span class="number">11</span>)); <span class="comment">//最后输出即可 </span></span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><del>水题一道</del><br>呸<br>模拟题一道<br>上code！</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">int</span> b[<span class="number">110</span>];</span><br><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> top;</span><br><span class="line"><span class="keyword">int</span> ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="comment">//freopen(".in","r",stdin);</span></span><br><span class="line">	<span class="comment">//freopen(".out","w",stdout);</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++){</span><br><span class="line">		cin &gt;&gt; a;</span><br><span class="line">		b[a]++;</span><br><span class="line">		sum += a;</span><br><span class="line">	}</span><br><span class="line">	top = sum;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">100</span>; i &gt;= <span class="number">0</span>; i--){</span><br><span class="line">		ans = top;</span><br><span class="line">		<span class="keyword">if</span> (b[i] &gt;= <span class="number">3</span>){</span><br><span class="line">			ans -= i*<span class="number">3</span>;</span><br><span class="line">		} <span class="keyword">else</span> <span class="keyword">if</span> (b[i] == <span class="number">2</span>){</span><br><span class="line">			ans -= i*<span class="number">2</span>;</span><br><span class="line">		}</span><br><span class="line">		sum = <span class="built_in">min</span>(sum,ans);</span><br><span class="line">	}</span><br><span class="line">	cout &lt;&lt; sum;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">int</span> b[<span class="number">110</span>];</span><br><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> top;</span><br><span class="line"><span class="keyword">int</span> ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="comment">//freopen(".in","r",stdin);</span></span><br><span class="line">	<span class="comment">//freopen(".out","w",stdout);</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++){</span><br><span class="line">		cin &gt;&gt; a;</span><br><span class="line">		b[a]++;</span><br><span class="line">		sum += a;</span><br><span class="line">	}</span><br><span class="line">	top = sum;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">100</span>; i &gt;= <span class="number">0</span>; i--){</span><br><span class="line">		ans = top;</span><br><span class="line">		<span class="keyword">if</span> (b[i] &gt;= <span class="number">3</span>){</span><br><span class="line">			ans -= i*<span class="number">3</span>;</span><br><span class="line">		} <span class="keyword">else</span> <span class="keyword">if</span> (b[i] == <span class="number">2</span>){</span><br><span class="line">			ans -= i*<span class="number">2</span>;</span><br><span class="line">		}</span><br><span class="line">		sum = <span class="built_in">min</span>(sum,ans);</span><br><span class="line">	}</span><br><span class="line">	cout &lt;&lt; sum;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
-<p>  测评结果    正确<br>    内存(KB)    4444KB<br>    耗时(MS)    349ms<br>    语言        C++<br>    代码长度    909 bytes</p>
+<p>  测评结果    通过<br>    分数        100<br>    时间        0 MS<br>    内存        704 KB<br>    语言        C++<br>    代码长度    451    </p>
 </blockquote>
 
     </div>
@@ -413,10 +418,10 @@
   <div class="popular-posts-header">往期文章推荐</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2000011491\" rel="bookmark">Bear and Five Cards题解</a></div>
+      <div class="popular-posts-title"><a href="\posts\2949852796\" rel="bookmark">Bear and Finding Criminals题解</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2949852796\" rel="bookmark">Bear and Finding Criminals题解</a></div>
+      <div class="popular-posts-title"><a href="\posts\751019721\" rel="bookmark">世界杯(worldcup)题解</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\posts\323266332\" rel="bookmark">4893 - 圆桌问题题解</a></div>
@@ -451,7 +456,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://seth-blog.ml/posts/751019721/" title="世界杯(worldcup)题解">https://seth-blog.ml/posts/751019721/</a>
+      <a href="https://seth-blog.ml/posts/2000011491/" title="Bear and Five Cards题解">https://seth-blog.ml/posts/2000011491/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -485,14 +490,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/3893026529/" rel="prev" title="谢言射教你用hexo+github搭建博客（简约版）">
-                  <i class="fa fa-chevron-left"></i> 谢言射教你用hexo+github搭建博客（简约版）
+                <a href="/posts/2949852796/" rel="prev" title="Bear and Finding Criminals题解">
+                  <i class="fa fa-chevron-left"></i> Bear and Finding Criminals题解
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2949852796/" rel="next" title="Bear and Finding Criminals题解">
-                  Bear and Finding Criminals题解 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -586,7 +588,7 @@
 
 
 
-<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"RCEjs84bEVz4S7S9bYcj2WLR-MdYXbMMI","appKey":"uI94i0aPhC2JJf8sEtfJa5qb","serverURLs":"https://rcejs84b.api.lncldglobal.com","placeholder":"评论区……昵称，邮箱，网站都不填是佚名哦~（都是选填的）","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/posts/751019721/"}</script>
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"RCEjs84bEVz4S7S9bYcj2WLR-MdYXbMMI","appKey":"uI94i0aPhC2JJf8sEtfJa5qb","serverURLs":"https://rcejs84b.api.lncldglobal.com","placeholder":"评论区……昵称，邮箱，网站都不填是佚名哦~（都是选填的）","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/posts/2000011491/"}</script>
 <script>
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.valine.el)
