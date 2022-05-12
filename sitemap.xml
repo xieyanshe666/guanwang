@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://seth-blog.ml/posts/180282341/</loc>
+    <loc>https://seth-blog.ml/posts/2000011491/</loc>
     
     <lastmod>2022-05-12</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://seth-blog.ml/posts/2694878122/</loc>
+    <loc>https://seth-blog.ml/posts/180282341/</loc>
     
     <lastmod>2022-05-12</lastmod>
     
@@ -30,6 +30,15 @@
   
   <url>
     <loc>https://seth-blog.ml/posts/241418217/</loc>
+    
+    <lastmod>2022-05-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://seth-blog.ml/posts/2694878122/</loc>
     
     <lastmod>2022-05-12</lastmod>
     
@@ -59,15 +68,6 @@
     <loc>https://seth-blog.ml/posts/20400546/</loc>
     
     <lastmod>2022-05-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://seth-blog.ml/posts/2000011491/</loc>
-    
-    <lastmod>2022-05-11</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

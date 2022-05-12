@@ -32,7 +32,7 @@
 <meta property="og:description" content="题目Bear and Five Cards">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-11T12:35:42.000Z">
-<meta property="article:modified_time" content="2022-05-11T12:54:31.134Z">
+<meta property="article:modified_time" content="2022-05-12T12:22:54.270Z">
 <meta property="article:author" content="Seth">
 <meta property="article:tag" content="c++">
 <meta property="article:tag" content="题解">
@@ -320,9 +320,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-05-11 20:35:42 / 修改时间：20:54:31" itemprop="dateCreated datePublished" datetime="2022-05-11T20:35:42+08:00">2022-05-11</time>
+      <time title="创建时间：2022-05-11 20:35:42" itemprop="dateCreated datePublished" datetime="2022-05-11T20:35:42+08:00">2022-05-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-05-12 20:22:54" itemprop="dateModified" datetime="2022-05-12T20:22:54+08:00">2022-05-12</time>
     </span>
 
   
@@ -352,7 +358,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.6k</span>
+      <span>1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -403,7 +409,7 @@
 <p>  时间限制    2 秒<br>    内存限制    256 MB<br>    来源        FYOJ</p>
 </blockquote>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><del>水题一道</del><br>呸<br>模拟题一道<br>上code！</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">int</span> b[<span class="number">110</span>];</span><br><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> top;</span><br><span class="line"><span class="keyword">int</span> ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="comment">//freopen(".in","r",stdin);</span></span><br><span class="line">	<span class="comment">//freopen(".out","w",stdout);</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++){</span><br><span class="line">		cin &gt;&gt; a;</span><br><span class="line">		b[a]++;</span><br><span class="line">		sum += a;</span><br><span class="line">	}</span><br><span class="line">	top = sum;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">100</span>; i &gt;= <span class="number">0</span>; i--){</span><br><span class="line">		ans = top;</span><br><span class="line">		<span class="keyword">if</span> (b[i] &gt;= <span class="number">3</span>){</span><br><span class="line">			ans -= i*<span class="number">3</span>;</span><br><span class="line">		} <span class="keyword">else</span> <span class="keyword">if</span> (b[i] == <span class="number">2</span>){</span><br><span class="line">			ans -= i*<span class="number">2</span>;</span><br><span class="line">		}</span><br><span class="line">		sum = <span class="built_in">min</span>(sum,ans);</span><br><span class="line">	}</span><br><span class="line">	cout &lt;&lt; sum;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">int</span> b[<span class="number">110</span>];</span><br><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> top;</span><br><span class="line"><span class="keyword">int</span> ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="comment">//freopen(".in","r",stdin);</span></span><br><span class="line">	<span class="comment">//freopen(".out","w",stdout);</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++){</span><br><span class="line">		cin &gt;&gt; a;</span><br><span class="line">		b[a]++;</span><br><span class="line">		sum += a;</span><br><span class="line">	}</span><br><span class="line">	top = sum;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">100</span>; i &gt;= <span class="number">0</span>; i--){</span><br><span class="line">		ans = top;</span><br><span class="line">		<span class="keyword">if</span> (b[i] &gt;= <span class="number">3</span>){</span><br><span class="line">			ans -= i*<span class="number">3</span>;</span><br><span class="line">		} <span class="keyword">else</span> <span class="keyword">if</span> (b[i] == <span class="number">2</span>){</span><br><span class="line">			ans -= i*<span class="number">2</span>;</span><br><span class="line">		}</span><br><span class="line">		sum = <span class="built_in">min</span>(sum,ans);</span><br><span class="line">	}</span><br><span class="line">	cout &lt;&lt; sum;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">int</span> b[<span class="number">110</span>];</span><br><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> top;</span><br><span class="line"><span class="keyword">int</span> ans;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="comment">//freopen(".in","r",stdin);</span></span><br><span class="line">	<span class="comment">//freopen(".out","w",stdout);</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++){</span><br><span class="line">		cin &gt;&gt; a;</span><br><span class="line">		b[a]++;</span><br><span class="line">		sum += a;</span><br><span class="line">	}</span><br><span class="line">	top = sum;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">100</span>; i &gt;= <span class="number">0</span>; i--){</span><br><span class="line">		ans = top;</span><br><span class="line">		<span class="keyword">if</span> (b[i] &gt;= <span class="number">3</span>){</span><br><span class="line">			ans -= i*<span class="number">3</span>;</span><br><span class="line">		} <span class="keyword">else</span> <span class="keyword">if</span> (b[i] == <span class="number">2</span>){</span><br><span class="line">			ans -= i*<span class="number">2</span>;</span><br><span class="line">		}</span><br><span class="line">		sum = <span class="built_in">min</span>(sum,ans);</span><br><span class="line">	}</span><br><span class="line">	cout &lt;&lt; sum;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <blockquote>
 <p>  测评结果    通过<br>    分数        100<br>    时间        0 MS<br>    内存        704 KB<br>    语言        C++<br>    代码长度    451    </p>
@@ -530,13 +536,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">42k</span>
+    <span title="站点总字数">41k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">38 分钟</span>
+    <span title="站点阅读时长">37 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
