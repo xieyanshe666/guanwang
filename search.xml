@@ -3,13 +3,7 @@
   <entry>
     <title>公告栏</title>
     <url>/posts/1528610346/</url>
-    <content><![CDATA[<p>祝各位520快乐！！！</p>
-<hr>
-<p>各位网友、同志们：<br>大家好！<br>由于小学毕业考即将到来，为了谢言射的前途考虑，我团队决定将暂时停止博客的维护，但不会全部停止，只是维护会比较缓慢，停止维护时间大致为5.20~6.20，为您到来不便烦请原谅。</p>
-<p>我团队在此保证，等毕业考一结束，我团队会立刻恢复博客的维护工作，绝不会让各位久等！</p>
-<p align="right">谢言射团队</p>
-<p align="right">2022年5月18日</p>
-
+    <content><![CDATA[<p>Hi~ 毕业考结束了，我又回来维护博客了！</p>
 <span id="more"></span>]]></content>
       <tags>
         <tag>公告</tag>
@@ -63,6 +57,32 @@
       <tags>
         <tag>游记</tag>
         <tag>学校</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>水壶(NOI Online3 lfw数据) 题解</title>
+    <url>/posts/3361761468/</url>
+    <content><![CDATA[<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="水壶-NOI-Online3-lfw数据"><a href="#水壶-NOI-Online3-lfw数据" class="headerlink" title="水壶(NOI Online3 lfw数据)"></a>水壶(NOI Online3 lfw数据)</h3><span id="more"></span>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>有 n 个容量无穷大的水壶，它们从 1∼n 编号，初始时 i 号水壶中装有 Ai 单位的水。<br>你可以进行不超过 k 次操作，每次操作需要选择一个满足 1≤x≤n−1 的编号 x，然后把 x 号水壶中的水全部倒入 x+1 号水壶中。<br>最后你可以任意选择恰好一个水壶，并喝掉水壶中所有的水。现在请你求出，你最多能喝到多少单位的水。</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>第一行一个正整数 n，表示水壶的个数。<br>第二行一个非负整数 k，表示操作次数上限。<br>第三行 n 个非负整数，相邻两个数用空格隔开，表示水壶的初始装水量 A1,A2,…,An。</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>一行，仅一个非负整数，表示答案。</p>
+<h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">10</span><br><span class="line">5</span><br><span class="line">890 965 256 419 296 987 45 676 976 742</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">3813</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><p>10%的数据    n&lt;=10<br>30%的数据    n&lt;=100<br>50%的数据    n&lt;=1000<br>70%的数据    n&lt;=10^5<br>100%的数据   1&lt;=n&lt;=10^6, 0&lt;=k&lt;=n-1, 0&lt;=Ai&lt;=10^3</p>
+<blockquote>
+<p>  时间限制: 1.000 Sec<br>    内存限制: 128 MB<br>    来源：Luo’s OJ</p>
+</blockquote>
+<h2 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h2><p>emmm……这题我们老师是用来讲对拍的<br>暴力也可以，但这里用的是前缀和</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> n,k;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1000010</span>],sum; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; k;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>,x; i &lt;= n; i++){</span><br><span class="line">		cin &gt;&gt; x;</span><br><span class="line">		a[i] = a[i - <span class="number">1</span>] + x;</span><br><span class="line">	}</span><br><span class="line">	k++;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i + k - <span class="number">1</span> &lt;= n; i++) {</span><br><span class="line">		<span class="keyword">int</span> j = i + k - <span class="number">1</span>;</span><br><span class="line">		sum = <span class="built_in">max</span>(sum,a[j] - a[i - <span class="number">1</span>]);</span><br><span class="line">	}</span><br><span class="line">	cout &lt;&lt; sum &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/xieyanshe666/PicGoCDN/img/Dingtalk_20220629100331.jpg"></p>
+]]></content>
+      <tags>
+        <tag>题解</tag>
+        <tag>c++</tag>
+        <tag>luo&#39;s OJ</tag>
       </tags>
   </entry>
   <entry>

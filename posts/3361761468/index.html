@@ -24,26 +24,32 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"seth-blog.ml","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="Seth的博客-This is my blog!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Seth&#39;s Blog">
-<meta property="og:url" content="https://seth-blog.ml/tags/%E5%B0%8F%E5%AD%A6%E6%95%B0%E5%AD%A6/index.html">
+<meta name="description" content="题解水壶(NOI Online3 lfw数据)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="水壶(NOI Online3 lfw数据) 题解">
+<meta property="og:url" content="https://seth-blog.ml/posts/3361761468/index.html">
 <meta property="og:site_name" content="Seth&#39;s Blog">
-<meta property="og:description" content="Seth的博客-This is my blog!">
+<meta property="og:description" content="题解水壶(NOI Online3 lfw数据)">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/xieyanshe666/PicGoCDN/img/Dingtalk_20220629100331.jpg">
+<meta property="article:published_time" content="2022-06-29T01:52:07.000Z">
+<meta property="article:modified_time" content="2022-06-29T02:04:47.267Z">
 <meta property="article:author" content="Seth">
-<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="题解">
+<meta property="article:tag" content="c++">
+<meta property="article:tag" content="luo&#39;s OJ">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/xieyanshe666/PicGoCDN/img/Dingtalk_20220629100331.jpg">
 
 
-<link rel="canonical" href="https://seth-blog.ml/tags/%E5%B0%8F%E5%AD%A6%E6%95%B0%E5%AD%A6/">
+<link rel="canonical" href="https://seth-blog.ml/posts/3361761468/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/小学数学/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://seth-blog.ml/posts/3361761468/","path":"posts/3361761468/","title":"水壶(NOI Online3 lfw数据) 题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: 小学数学 | Seth's Blog</title>
+<title>水壶(NOI Online3 lfw数据) 题解 | Seth's Blog</title>
   
 
 
@@ -142,7 +148,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -155,6 +161,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B0%B4%E5%A3%B6-NOI-Online3-lfw%E6%95%B0%E6%8D%AE"><span class="nav-number">1.1.</span> <span class="nav-text">水壶(NOI Online3 lfw数据)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.2.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-number">1.3.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-number">1.4.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5"><span class="nav-number">1.5.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA"><span class="nav-number">1.6.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA"><span class="nav-number">1.7.</span> <span class="nav-text">提示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-1"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -282,51 +289,208 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">小学数学
-          <small>标签</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://seth-blog.ml/posts/3361761468/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/picture.jpeg">
+      <meta itemprop="name" content="Seth">
+      <meta itemprop="description" content="Seth的博客-This is my blog!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Seth's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          水壶(NOI Online3 lfw数据) 题解
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+
+      <time title="创建时间：2022-06-29 09:52:07 / 修改时间：10:04:47" itemprop="dateCreated datePublished" datetime="2022-06-29T09:52:07+08:00">2022-06-29</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Valine：</span>
+  
+    <a title="valine" href="/posts/3361761468/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/3361761468/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>829</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+		  
+		  
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="水壶-NOI-Online3-lfw数据"><a href="#水壶-NOI-Online3-lfw数据" class="headerlink" title="水壶(NOI Online3 lfw数据)"></a>水壶(NOI Online3 lfw数据)</h3><span id="more"></span>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>有 n 个容量无穷大的水壶，它们从 1∼n 编号，初始时 i 号水壶中装有 Ai 单位的水。<br>你可以进行不超过 k 次操作，每次操作需要选择一个满足 1≤x≤n−1 的编号 x，然后把 x 号水壶中的水全部倒入 x+1 号水壶中。<br>最后你可以任意选择恰好一个水壶，并喝掉水壶中所有的水。现在请你求出，你最多能喝到多少单位的水。</p>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>第一行一个正整数 n，表示水壶的个数。<br>第二行一个非负整数 k，表示操作次数上限。<br>第三行 n 个非负整数，相邻两个数用空格隔开，表示水壶的初始装水量 A1,A2,…,An。</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>一行，仅一个非负整数，表示答案。</p>
+<h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">10</span><br><span class="line">5</span><br><span class="line">890 965 256 419 296 987 45 676 976 742</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3813</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><p>10%的数据    n&lt;=10<br>30%的数据    n&lt;=100<br>50%的数据    n&lt;=1000<br>70%的数据    n&lt;=10^5<br>100%的数据   1&lt;=n&lt;=10^6, 0&lt;=k&lt;=n-1, 0&lt;=Ai&lt;=10^3</p>
+<blockquote>
+<p>  时间限制: 1.000 Sec<br>    内存限制: 128 MB<br>    来源：Luo’s OJ</p>
+</blockquote>
+<h2 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h2><p>emmm……这题我们老师是用来讲对拍的<br>暴力也可以，但这里用的是前缀和</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> n,k;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1000010</span>],sum; </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; k;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>,x; i &lt;= n; i++){</span><br><span class="line">		cin &gt;&gt; x;</span><br><span class="line">		a[i] = a[i - <span class="number">1</span>] + x;</span><br><span class="line">	}</span><br><span class="line">	k++;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i + k - <span class="number">1</span> &lt;= n; i++) {</span><br><span class="line">		<span class="keyword">int</span> j = i + k - <span class="number">1</span>;</span><br><span class="line">		sum = <span class="built_in">max</span>(sum,a[j] - a[i - <span class="number">1</span>]);</span><br><span class="line">	}</span><br><span class="line">	cout &lt;&lt; sum &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/xieyanshe666/PicGoCDN/img/Dingtalk_20220629100331.jpg"></p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-02-04T16:54:46+08:00"
-              content="2022-02-04">
-          02-04
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/posts/336091895/" itemprop="url">
-            <span itemprop="name">小学数学必背公式</span>
-          </a>
-      </div>
-
+    
+    
+    
       
-    </header>
-  </article>
+  <div class="popular-posts-header">往期文章推荐</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\659898594\" rel="bookmark">luo2086-----奶牛排队 题解</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\3358763417\" rel="bookmark">luo1046-----非负和 题解</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\8623461\" rel="bookmark">luo1428-----区间最小最大值 题解</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\180282341\" rel="bookmark">Far Relative’s Birthday Cake 题解</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\2694878122\" rel="bookmark">Bear and Colors题解</a></div>
+    </li>
+  </ul>
 
-    </div>
+	
+	<div>
+		
+			<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+		
+	</div>
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Seth
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://seth-blog.ml/posts/3361761468/" title="水壶(NOI Online3 lfw数据) 题解">https://seth-blog.ml/posts/3361761468/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
   </div>
-  
-  
-  
+</div>
 
+          <div class="post-tags">
+              <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"><i class="fa fa-tag"></i> 题解</a>
+              <a href="/tags/c/" rel="tag"><i class="fa fa-tag"></i> c++</a>
+              <a href="/tags/luo-s-OJ/" rel="tag"><i class="fa fa-tag"></i> luo's OJ</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/3869669730/" rel="prev" title="博客暂时通知维护的通知">
+                  <i class="fa fa-chevron-left"></i> 博客暂时通知维护的通知
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="valine-comments"></div>
 </div>
   </main>
 
@@ -408,7 +572,7 @@
 
 
 
-<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"RCEjs84bEVz4S7S9bYcj2WLR-MdYXbMMI","appKey":"uI94i0aPhC2JJf8sEtfJa5qb","serverURLs":"https://rcejs84b.api.lncldglobal.com","placeholder":"评论区……昵称，邮箱，网站都不填是佚名哦~（都是选填的）","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/tags/%E5%B0%8F%E5%AD%A6%E6%95%B0%E5%AD%A6/"}</script>
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"RCEjs84bEVz4S7S9bYcj2WLR-MdYXbMMI","appKey":"uI94i0aPhC2JJf8sEtfJa5qb","serverURLs":"https://rcejs84b.api.lncldglobal.com","placeholder":"评论区……昵称，邮箱，网站都不填是佚名哦~（都是选填的）","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/posts/3361761468/"}</script>
 <script>
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.valine.el)
