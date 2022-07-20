@@ -24,31 +24,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"seth-blog.ml","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="题目问题 B: 华容道(huarong)">
+<meta name="description" content="草原上有100头狮子和1只羊，已知（1）狮子和羊都可以以食草为生（2）比起草来狮子更爱羊肉的鲜美（3）但哪头狮子如果吃了羊自己就会变成羊（4）狮子们都很聪明，会逻辑推理（5）狮子之间不能沟通 问：假如其中一头狮子看见了羊，他会不会去吃羊？ （答案见下期）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2022绍兴小学-----问题 B: 华容道(huarong) 题解">
-<meta property="og:url" content="https://seth-blog.ml/posts/662691727/index.html">
+<meta property="og:title" content="想不出写什么了，给你们出道题吧2">
+<meta property="og:url" content="https://seth-blog.ml/posts/2031153127/index.html">
 <meta property="og:site_name" content="Seth&#39;s Blog">
-<meta property="og:description" content="题目问题 B: 华容道(huarong)">
+<meta property="og:description" content="草原上有100头狮子和1只羊，已知（1）狮子和羊都可以以食草为生（2）比起草来狮子更爱羊肉的鲜美（3）但哪头狮子如果吃了羊自己就会变成羊（4）狮子们都很聪明，会逻辑推理（5）狮子之间不能沟通 问：假如其中一头狮子看见了羊，他会不会去吃羊？ （答案见下期）">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/xieyanshe666/PicGoCDN/img/20220705095540_24528.jpg">
-<meta property="article:published_time" content="2022-07-09T11:30:52.000Z">
-<meta property="article:modified_time" content="2022-07-09T11:40:39.120Z">
+<meta property="article:published_time" content="2022-07-20T06:00:07.000Z">
+<meta property="article:modified_time" content="2022-07-20T06:05:55.796Z">
 <meta property="article:author" content="Seth">
-<meta property="article:tag" content="题解">
-<meta property="article:tag" content="c++">
+<meta property="article:tag" content="逻辑推理">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/xieyanshe666/PicGoCDN/img/20220705095540_24528.jpg">
 
 
-<link rel="canonical" href="https://seth-blog.ml/posts/662691727/">
+<link rel="canonical" href="https://seth-blog.ml/posts/2031153127/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://seth-blog.ml/posts/662691727/","path":"posts/662691727/","title":"2022绍兴小学-----问题 B: 华容道(huarong) 题解"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://seth-blog.ml/posts/2031153127/","path":"posts/2031153127/","title":"想不出写什么了，给你们出道题吧2"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>2022绍兴小学-----问题 B: 华容道(huarong) 题解 | Seth's Blog</title>
+<title>想不出写什么了，给你们出道题吧2 | Seth's Blog</title>
   
 
 
@@ -147,7 +144,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -160,7 +157,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98-B-%E5%8D%8E%E5%AE%B9%E9%81%93-huarong"><span class="nav-number">1.1.</span> <span class="nav-text">问题 B: 华容道(huarong)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.2.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-number">1.3.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-number">1.4.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5"><span class="nav-number">1.5.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA"><span class="nav-number">1.6.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA"><span class="nav-number">1.7.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%90%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4%E7%BA%A6%E5%AE%9A%E3%80%91"><span class="nav-number">1.8.</span> <span class="nav-text">【数据范围约定】</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -299,7 +295,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://seth-blog.ml/posts/662691727/">
+    <link itemprop="mainEntityOfPage" href="https://seth-blog.ml/posts/2031153127/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/picture.jpeg">
@@ -312,7 +308,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          2022绍兴小学-----问题 B: 华容道(huarong) 题解
+          想不出写什么了，给你们出道题吧2
         </h1>
 
         <div class="post-meta-container">
@@ -324,7 +320,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-07-09 19:30:52 / 修改时间：19:40:39" itemprop="dateCreated datePublished" datetime="2022-07-09T19:30:52+08:00">2022-07-09</time>
+      <time title="创建时间：2022-07-20 14:00:07 / 修改时间：14:05:55" itemprop="dateCreated datePublished" datetime="2022-07-20T14:00:07+08:00">2022-07-20</time>
     </span>
 
   
@@ -343,8 +339,8 @@
     </span>
     <span class="post-meta-item-text">Valine：</span>
   
-    <a title="valine" href="/posts/662691727/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/662691727/" itemprop="commentCount"></span>
+    <a title="valine" href="/posts/2031153127/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/2031153127/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -354,7 +350,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.5k</span>
+      <span>315</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -374,20 +370,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="问题-B-华容道-huarong"><a href="#问题-B-华容道-huarong" class="headerlink" title="问题 B: 华容道(huarong)"></a>问题 B: 华容道(huarong)</h2><span id="more"></span>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>小童是一个喜欢数字华容道的女生。<br>数字华容道游戏是一种最早的滑块类游戏，常见的类型有十五数字推盘游戏和八数字推盘游戏等。十五数字华容道游戏的板上会有十五个方块和一个大小相当于一个方块的空位（供方块移动之用）。而八数字华容道游戏，为九宫格布局，有八个方块和一个空位（如图1）。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/xieyanshe666/PicGoCDN/img/20220705095540_24528.jpg" alt="图1 八数字推盘游戏的棋盘"></p>
-<p>在小童十岁生日的当天，小童的叔叔送给了她一块八数字华容道游戏作为生日礼物。<br>在送给小童之前，叔叔打乱了这块华容道，想要小童还原它。<br>聪明的小童当然立刻就还原了，并且还记下了还原的过程。<br>第二天上学的时候，小童告诉了你她还原的过程，想要学习信息学竞赛的你编写一个程序回答她，叔叔送她的华容道在小童开始还原之前是什么样的。<br>具体的，小童还原一共有 n 步，每一步可以用一个字符表示：<br>第i个字符如果是‘L’，则表示小童第i次是把空位左边的块移到了空位；<br>第i个字符如果是‘R’，则表示小童第i次是把空位右边的块移到了空位；<br>第i个字符如果是‘U’，则表示小童第i次是把空位上边的块移到了空位；<br>第i个字符如果是‘D’，则表示小童第i次是把空位下边的块移到了空位。<br>另外，小童是一个诚实的孩子，所以她告诉你的还原过程一定是合法的。</p>
-<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>第一行一个整数n，表示小童整个还原过程共 n 步。<br>第二行为一个长度为n的字符串S，第i个字符表示了小童第i步是怎么操作的。</p>
-<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>三行三个整数，每行两个整数之间有一个空格，表示华容道一开始的样子，空位的位置用0填充。</p>
-<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">LURD</span><br></pre></td></tr></tbody></table></figure>
+        <p>草原上有100头狮子和1只羊，已知<br>（1）狮子和羊都可以以食草为生<br>（2）比起草来狮子更爱羊肉的鲜美<br>（3）但哪头狮子如果吃了羊自己就会变成羊<br>（4）狮子们都很聪明，会逻辑推理<br>（5）狮子之间不能沟通</p>
+<p>问：假如其中一头狮子看见了羊，他会不会去吃羊？</p>
+<p>（答案见下期）</p>
+<span id="more"></span>
 
-<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 2 3</span><br><span class="line">4 8 5</span><br><span class="line">7 6 0</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p>我们可以通过小童的操作从后往前一步一步倒推出华容道一开始的样子，比如小童第i次操作是把空位下的块往上移倒过来倒推回去就相当于是空位往上移动了一格，然后原本在空位上面的格子里的数往下移。具体对于样例来说就是：<br>1 2 3    1 2 3    1 2 3    1 2 3    1 2 3<br>4 5 6 -&gt; 4 5 0 -&gt; 4 0 5 -&gt; 4 8 5 -&gt; 4 8 5<br>7 8 0    7 8 6    7 8 6    7 0 6    7 6 0</p>
-<h2 id="【数据范围约定】"><a href="#【数据范围约定】" class="headerlink" title="【数据范围约定】"></a>【数据范围约定】</h2><p>对于10% 的数据，n=0；<br>对于30% 的数据，n≤1；<br>另有30% 的数据，S中只含有‘L’和‘R’两种字符；<br>对于所有数据，0≤n≤50，S中只含有‘L’、‘R’、‘U’和‘D’四种字符。</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>嗯，很好，模拟题，轻轻松松AC</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> n,g[<span class="number">5</span>][<span class="number">5</span>];</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">55</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    g[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">1</span>; </span><br><span class="line">    g[<span class="number">1</span>][<span class="number">2</span>] = <span class="number">2</span>;</span><br><span class="line">    g[<span class="number">1</span>][<span class="number">3</span>] = <span class="number">3</span>;</span><br><span class="line">    g[<span class="number">2</span>][<span class="number">1</span>] = <span class="number">4</span>; </span><br><span class="line">    g[<span class="number">2</span>][<span class="number">2</span>] = <span class="number">5</span>; </span><br><span class="line">    g[<span class="number">2</span>][<span class="number">3</span>] = <span class="number">6</span>;</span><br><span class="line">    g[<span class="number">3</span>][<span class="number">1</span>] = <span class="number">7</span>; </span><br><span class="line">    g[<span class="number">3</span>][<span class="number">2</span>] = <span class="number">8</span>; </span><br><span class="line">    g[<span class="number">3</span>][<span class="number">3</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">3</span>,y = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = n; i &gt;= <span class="number">1</span>; i--){</span><br><span class="line">        <span class="keyword">if</span>(s[i] == <span class="string">'L'</span>){</span><br><span class="line">            <span class="built_in">swap</span>(g[x][y],g[x][y+<span class="number">1</span>]), y++;</span><br><span class="line">        } <span class="keyword">else</span> <span class="keyword">if</span>(s[i] == <span class="string">'R'</span>){</span><br><span class="line">            <span class="built_in">swap</span>(g[x][y],g[x][y<span class="number">-1</span>]),y--;</span><br><span class="line">        } <span class="keyword">else</span> <span class="keyword">if</span>(s[i] == <span class="string">'U'</span>){</span><br><span class="line">            <span class="built_in">swap</span>(g[x][y],g[x+<span class="number">1</span>][y]),x++;</span><br><span class="line">        } <span class="keyword">else</span>{</span><br><span class="line">            <span class="built_in">swap</span>(g[x][y],g[x<span class="number">-1</span>][y]),x--;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++){</span><br><span class="line">         </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; <span class="number">3</span>; j++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d "</span>,g[i][j]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,g[i][<span class="number">3</span>]);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>上期答案：<br>把十个人看做十位二进制数，把酒按照二进制数依次从0000000001编到1111101000(十进制的1000)，然后让编号里对应1位置的人喝这个酒桶里的酒。如第500(二进制0111110100)桶酒，让第2，3，4，5，6，8个人喝，依次喝完。从最后反馈的结果可以直接得出毒酒所在，如:第3，4，6，8，9，10个人毒发，则对应编号为11010111，即第215桶。</p>
 
     </div>
 
@@ -398,19 +387,7 @@
   <div class="popular-posts-header">往期文章推荐</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\195994566\" rel="bookmark">2022绍兴小学-----问题 D: 三角形(triangle) 题解</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\830323511\" rel="bookmark">2022绍兴小学-----问题 C: 美感(beautiful) 题解</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\866924548\" rel="bookmark">2022绍兴小学-----问题 A: 分组(group) 题解</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\3361761468\" rel="bookmark">水壶(NOI Online3 lfw数据) 题解</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\659898594\" rel="bookmark">luo2086-----奶牛排队 题解</a></div>
+      <div class="popular-posts-title"><a href="\posts\3759783517\" rel="bookmark">想不出写什么了，给你们出道题吧1</a></div>
     </li>
   </ul>
 
@@ -436,7 +413,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://seth-blog.ml/posts/662691727/" title="2022绍兴小学-----问题 B: 华容道(huarong) 题解">https://seth-blog.ml/posts/662691727/</a>
+      <a href="https://seth-blog.ml/posts/2031153127/" title="想不出写什么了，给你们出道题吧2">https://seth-blog.ml/posts/2031153127/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -462,22 +439,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"><i class="fa fa-tag"></i> 题解</a>
-              <a href="/tags/c/" rel="tag"><i class="fa fa-tag"></i> c++</a>
+              <a href="/tags/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/" rel="tag"><i class="fa fa-tag"></i> 逻辑推理</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/866924548/" rel="prev" title="2022绍兴小学-----问题 A: 分组(group) 题解">
-                  <i class="fa fa-chevron-left"></i> 2022绍兴小学-----问题 A: 分组(group) 题解
+                <a href="/posts/1998936257/" rel="prev" title="分享几道关于绝对值的题">
+                  <i class="fa fa-chevron-left"></i> 分享几道关于绝对值的题
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/3759783517/" rel="next" title="想不出写什么了，给你们出道题吧1">
-                  想不出写什么了，给你们出道题吧1 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -571,7 +544,7 @@
 
 
 
-<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"RCEjs84bEVz4S7S9bYcj2WLR-MdYXbMMI","appKey":"uI94i0aPhC2JJf8sEtfJa5qb","serverURLs":"https://rcejs84b.api.lncldglobal.com","placeholder":"评论区……昵称，邮箱，网站都不填是佚名哦~（都是选填的）","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/posts/662691727/"}</script>
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"RCEjs84bEVz4S7S9bYcj2WLR-MdYXbMMI","appKey":"uI94i0aPhC2JJf8sEtfJa5qb","serverURLs":"https://rcejs84b.api.lncldglobal.com","placeholder":"评论区……昵称，邮箱，网站都不填是佚名哦~（都是选填的）","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/posts/2031153127/"}</script>
 <script>
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.valine.el)
