@@ -624,20 +624,6 @@
   </url>
   
   <url>
-    <loc>https://seth-blog.ml/tags/%E6%96%87%E7%AB%A0%E6%94%B9%E7%BC%96/</loc>
-    <lastmod>2022-11-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://seth-blog.ml/tags/%E8%B6%A3%E6%96%87/</loc>
-    <lastmod>2022-11-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://seth-blog.ml/tags/%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2022-11-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -653,6 +639,20 @@
   
   <url>
     <loc>https://seth-blog.ml/tags/%E6%B5%81%E8%A1%8C/</loc>
+    <lastmod>2022-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://seth-blog.ml/tags/%E6%96%87%E7%AB%A0%E6%94%B9%E7%BC%96/</loc>
+    <lastmod>2022-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://seth-blog.ml/tags/%E8%B6%A3%E6%96%87/</loc>
     <lastmod>2022-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -687,6 +687,13 @@
   </url>
   
   <url>
+    <loc>https://seth-blog.ml/tags/%E7%AE%80%E4%BB%8B/</loc>
+    <lastmod>2022-11-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://seth-blog.ml/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</loc>
     <lastmod>2022-11-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -695,13 +702,6 @@
   
   <url>
     <loc>https://seth-blog.ml/tags/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2022-11-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://seth-blog.ml/tags/%E6%AD%8C%E6%9B%B2/</loc>
     <lastmod>2022-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -722,14 +722,14 @@
   </url>
   
   <url>
-    <loc>https://seth-blog.ml/tags/%E7%AE%80%E4%BB%8B/</loc>
+    <loc>https://seth-blog.ml/tags/%E8%AF%B4%E8%AF%B4/</loc>
     <lastmod>2022-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://seth-blog.ml/tags/%E8%AF%B4%E8%AF%B4/</loc>
+    <loc>https://seth-blog.ml/tags/%E6%AD%8C%E6%9B%B2/</loc>
     <lastmod>2022-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
